@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- Page title displayed in browser tab -->
+    <title>Pokédex</title>
+</head>
+<body>
+
+<!-- Main container for all page content -->
+<div id="mainBody">
+    <!-- Header section with title -->
+    <div id="titleNText">
+        <h1>Professor Liam's Complete Pokédex!</h1>
+    </div>
+
+    <!-- Search section container -->
+    <div id="searchPokedex">
+        <!-- Search instructions -->
+        <p>Enter a Pokémon name or ID to fetch its details:</p>
+        <p>To search by type, select or type the desired type and click "Search by Type."</p>
+
+        <!-- Input field for search queries -->
+        <label for="pokemonName"></label>
+        <input type="text" id="pokemonName" placeholder="Enter Pokémon name or ID" />
+
+        <!-- Button for individual Pokémon search -->
+        <button onclick="masterSearch('individual',document.getElementById('pokemonName').value)">Find Pokémon</button>
+        <br>
+
+        <!-- Type selector section -->
+        <p>Type Selector: </p>
+        <label for="pokemonTypeSelector"></label>
+        <!-- Dropdown for Pokémon types -->
+        <select id="pokemonTypeSelector" onchange="document.getElementById('pokemonName').value = this.value">
+            <option value="">Select A Type</option>
+            <!-- List of all Pokémon types as options -->
+            <option value="normal">Normal</option>
+            <option value="fighting">Fighting</option>
+            <option value="flying">Flying</option>
+            <option value="poison">Poison</option>
+            <option value="ground">Ground</option>
+            <option value="rock">Rock</option>
+            <option value="bug">Bug</option>
+            <option value="ghost">Ghost</option>
+            <option value="steel">Steel</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="grass">Grass</option>
+            <option value="electric">Electric</option>
+            <option value="psychic">Psychic</option>
+            <option value="ice">Ice</option>
+            <option value="dragon">Dragon</option>
+            <option value="dark">Dark</option>
+            <option value="fairy">Fairy</option>
+            <option value="favorites">Favorites</option>
+        </select>
+        <!-- Button for type-based search -->
+        <button onclick="masterSearch('typeSearch',document.getElementById('pokemonName').value)">Search By Type</button>
+    </div>
+</div>
+
+<!-- Container for displaying detailed Pokémon information (large card) -->
+<div id="LargeCardHolder">
+    <!-- Content populated dynamically by JavaScript -->
+</div>
+
+<!-- Grid container for displaying multiple Pokémon cards -->
+<div id="grid-container">
+    <!-- Cards are added dynamically by JavaScript -->
+</div>
+
+<!-- Link to external JavaScript file -->
+<script src="js/script.js"></script>
+</body>
+</html>

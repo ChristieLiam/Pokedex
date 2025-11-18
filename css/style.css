@@ -1,0 +1,494 @@
+/* ------------------- GLOBAL STYLES ------------------- */
+
+/* Reset margin, padding, and set height for body and html */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Center content in the main body */
+.mainBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* ------------------- TITLE AND SEARCH FORM STYLES ------------------- */
+
+/* Center the title and search form text */
+#titleNText, #searchPokedex {
+    text-align: center;
+}
+
+/* Center search form on the page */
+.searchPokedex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    width: 100%;
+    padding: 0 10px;
+}
+
+/* Style for the search form container */
+#searchPokedex {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Style for input, button, and select elements inside the form */
+#searchPokedex input,
+#searchPokedex button,
+#searchPokedex select {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style for the button */
+#searchPokedex button {
+    cursor: pointer;
+    background-color: crimson;
+    color: white;
+    border: none;
+}
+
+/* Hover effect for the button */
+#searchPokedex button:hover {
+    background-color: #ff2f2f;
+}
+
+/* Style for the select dropdown */
+#searchPokedex select {
+    background-color: #f9f9f9;
+}
+
+/* ------------------- HEADING STYLES ------------------- */
+
+/* Basic heading style */
+h1 {
+    color: #333;
+    font-size: 2rem;
+}
+
+/* ------------------- SCROLLABLE TEXT BOX STYLES ------------------- */
+
+/* Style for scrollable text box */
+.scrollable-text {
+    width: 300px;
+    height: 150px;
+    overflow: auto;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* ------------------- POKEDEX CARD GRID STYLES ------------------- */
+
+/* Grid layout for Pokedex cards */
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Style for individual cards */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 220px;
+    max-height: 350px;
+    background-color: #f9f9f9;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Style for images inside cards */
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for headings inside cards */
+.card h2, .card h3, .card h4 {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* Bold style for h2 and h3 */
+.card h2, .card h3 {
+    font-weight: bold;
+}
+
+/* Style for h4 (lighter font weight) */
+.card h4 {
+    font-weight: normal;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* ------------------- EXPANDED CARD STYLES ------------------- */
+
+/* Container for expanded card */
+#LargeCardHolder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Style for expanded card */
+.cardExpanded {
+    display: grid;
+    grid-template-areas:
+        "nameBox stats sprites"
+        "ability moves sprites"
+        "ability moves sprites"
+        "evoChain evoChain sprites"
+        "soundButton soundButton soundButton";
+    gap: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 35px 10px 0px;
+    z-index: 1001;
+    position: relative;
+    pointer-events: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for each section inside the expanded card */
+.cardExpanded > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* Grid areas for sections of expanded cards */
+.cardExpanded > div.nameBox {
+    grid-area: nameBox;
+    max-width: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardExpanded > div.ability {
+    grid-area: ability;
+    max-width: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardExpanded > div.moves {
+    grid-area: moves;
+    max-width: 450px;
+
+}
+
+.cardExpanded > div.stats {
+    grid-area: stats;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardExpanded > div.sprites {
+    grid-area: sprites;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+}
+
+.cardExpanded > div.evoChain {
+    grid-area: evoChain;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardExpanded > div.soundButton {
+    grid-area: soundButton;
+    padding: 0;
+    border: transparent solid 10px;
+    background-color: transparent;
+}
+
+/* Styling for elements within grid areas */
+.cardExpanded > div.nameBox > h1, h2, h3, h4, p {
+    margin: 2px;
+}
+
+.cardExpanded > div.sprites > img {
+    width: 128px;
+    height: 128px;
+}
+
+.cardExpanded > div.evoChain > p {
+    font-weight: bold;
+    font-size: 15px;
+    font-family: "Wingdings";
+}
+
+.cardExpanded > div.buttonBox {
+    background: transparent;
+    border: none;
+}
+
+.cardExpanded > div.moves {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 0;
+    color: #333;
+}
+
+.cardExpanded > div.moves > p {
+    font-weight: bold;
+}
+
+.cardExpanded > div.moves > div.scrollable-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10px;
+    border-radius: 0;
+    border: none;
+    font-weight: bold;
+    overflow-y: auto;
+}
+
+.cardExpanded > div.moves > div.scrollable-text > h3 {
+    font-weight: bold;
+    color: crimson;
+}
+
+.cardExpanded > div.moves > div.scrollable-text > p {
+    font-weight: normal;
+    color: black;
+    margin: 5px 0;
+}
+
+.cardExpanded > div.stats {
+    grid-area: stats;
+    max-width: 450px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardExpanded > div.stats h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cardExpanded > div.stats p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.cardExpanded > div.ability {
+    grid-area: ability;
+    max-width: 325px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardExpanded > div.ability h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cardExpanded > div.ability h4 {
+    font-size: 16px;
+    color: crimson;
+    margin: 5px 0;
+}
+
+.cardExpanded > div.ability p {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.cardExpanded > div.nameBox {
+    grid-area: nameBox;
+    max-width: 325px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardExpanded > div.nameBox h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cardExpanded > div.nameBox h2 {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.cardExpanded > div.nameBox h4 {
+    font-size: 16px;
+    color: #777;
+    margin: 5px 0;
+}
+
+/* ------------------- BUTTON STYLES IN EXPANDED CARDS ------------------- */
+
+/* Favorite button (base style) */
+#favoriteButton {
+    border: 1px solid black;
+    outline: none;
+    background-color: #ffffff;
+    border-radius: 40px;
+    color: #ffbf00;
+    font-weight: bold;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    transition: background-color 0.5s ease, transform 0.5s ease, color 0.5s ease, border 0.5s ease;
+}
+
+/* Favorite button hover effect */
+#favoriteButton:hover {
+    background-color: #ffbf00;
+    border: none;
+    color: white;
+    transform: scale(1.12);
+}
+
+/* Favorite button when favorited (active state) */
+#favoriteButton.favorited {
+    border: none;
+    background-color: #ffbf00;
+    color: white;
+}
+
+/* Favorite button hover effect when favorited */
+#favoriteButton.favorited:hover {
+    background-color: #ffd160;
+    transform: scale(1.12);
+}
+
+/* Close card button */
+#closeCard {
+    border: none;
+    outline: none;
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+#closeCard:hover {
+    background-color: #ff2e2e;
+    transform: scale(1.12);
+}
+
+/* Sound button */
+.cardExpanded > div.soundButton > button {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 150%;
+    color: white;
+    background-color: crimson;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.cardExpanded > div.soundButton > button:hover {
+    background-color: #ff2e2e;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+/* Evolution chain button */
+.cardExpanded > div.evoChain > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: transparent;
+    border-radius: 15px;
+    background-color: transparent;
+    transition: transform 0.5s ease;
+}
+
+.cardExpanded > div.evoChain > button:hover {
+    cursor: pointer;
+    transform: scale(1.10);
+}
