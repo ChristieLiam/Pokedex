@@ -50,7 +50,7 @@ Link here - not online yet
 
 ### Step 2: Navigate to the project folder
 
-    cd Pokedex-main
+    cd Pokedex
 
 ### Step 3: Open the app
 
