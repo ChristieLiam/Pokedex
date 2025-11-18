@@ -5,7 +5,8 @@ A dynamic and responsive web application that allows users to search for Pokémo
 ---
 
 ## Live Demo
-Add your deployed project link here once hosted.
+
+Link here - not online yet
 
 ---
 
