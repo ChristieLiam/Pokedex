@@ -45,11 +45,11 @@ Add your deployed project link here once hosted.
 
 ### Step 1: Clone the repository
 
-    git clone [https://github.com/ChristieLiam/Pokedex.git]
+    git clone https://github.com/ChristieLiam/Pokedex.git
 
 ### Step 2: Navigate to the project folder
 
-    cd [Pokedex-main]
+    cd Pokedex-main
 
 ### Step 3: Open the app
 
